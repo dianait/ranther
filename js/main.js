@@ -2,6 +2,7 @@ import { ENDPOINT, API } from '../config/cohere.js'
 
 const myButton = document.querySelector(".my-button");
 const output = document.querySelector(".question");
+const shareTwitter = document.querySelector(".share-twitter");
 myButton.onclick = getQuestion;
 
 var loadingDiv = document.getElementById('loading');
@@ -39,5 +40,16 @@ async function getQuestion() {
 
   const { text } = response.generations[0]
   hideSpinner()
+  shareTwitter.setAttribute("href", getUrlShareTwitter(text.trim()));
   output.innerText = text.trim()
 }
+
+function getUrlShareTwitter(question) {
+  const BASE_URL = "https://twitter.com/intent/tweet";
+  const content = `?text=⭐️ New question ⭐️ 👉  ${question} Get another one at &url=https://ranther.vercel.app`;
+  return BASE_URL + content;
+} 
+
+(() =>{
+  shareTwitter.setAttribute("href", getUrlShareTwitter("Would you rather be a cat or a dog?"));
+})();
