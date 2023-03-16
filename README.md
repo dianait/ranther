@@ -7,17 +7,6 @@ Ranther  is a great way to start a conversation, and this repo makes it easy to 
 <br />
 <br />
 
-## 🛠️ Built With
-<div style="background-color:white;">
-<div style="width:550px;margin: 0 auto;">
-<img style="margin: 1rem 2rem" src="./public/html.svg" alt="html" width="30">
-<img style="margin:  1rem 2rem" src="./public/css.svg" alt="css" width="30">
-<img style="margin:  1.2rem 2rem" src="./public/js.svg" alt="js" width="30">
-<img style="margin:  1.1rem 2rem" src="./public/vite.svg" alt="vite" width="30">
-<img style="margin:  1.5rem 2rem" src="./public/cohere.png" alt="co:here" width="100">
-</div>
-</div>
-<br />
 🕣 May <strong>take a little while</strong> because I'm using <strong>co:here</strong> free trial API key. <a href="https://cohere.ai/">Get yours!</a>
 
 <br />
