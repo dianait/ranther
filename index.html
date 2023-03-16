@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Ranther</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Welcome to <span class="text-gradient">Ranther</span></h1>
+    <p class="instructions">
+      🙋🏻‍♀️ The IA <strong>ran</strong>dom ra<strong>ther</strong> question generator you were looking for.
+    </p>
+    <section class="card">
+      <h2 class="question">Would you rather be a cat or a dog?</h2>
+    </section>
+    <button class="my-button">Get new question</button>
+  </main>
+</body>
+
+<script type="module">
+
+  import { ENDPOINT, API } from './config/cohere.js'
+
+  const myButton = document.querySelector(".my-button");
+  const output = document.querySelector(".question");
+  myButton.onclick = getQuestion;
+
+  async function getQuestion() {
+    console.log("Getting question...")
+    const data = {
+      model: 'command-xlarge-nightly',
+      prompt: `Generate a single "Would You Rather" question for a informal meeting in order to know us each other a little better without being too personal. Generate only the question, not the answer.`,
+      max_tokens: 182,
+      temperature: 0.9,
+      k: 0,
+      p: 0.75,
+      stop_sequences: ['--'],
+      return_likelihoods: 'NONE'
+    }
+
+    const response = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        Authorization: `BEARER ${API}`,
+        "Content-Type": 'application/json',
+        "Cohere-Version": '2022-12-06'
+      },
+      body: JSON.stringify(data)
+    }).then(res => res.json())
+
+    const { text } = response.generations[0]
+    output.innerText = text
+  }
+</script>
+
+</html>
