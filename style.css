@@ -65,11 +65,20 @@ button {
   font-size: large;
 }
 h2 {
+  text-align: center;
+  margin: 0 auto;
   padding: 2rem 1rem;
-  margin: 0 7rem;
   font-size: 1.25rem;
   transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+@media only screen and (min-width: 600px) {
+  h2 {
+    width: 85%;
+    padding: 2rem 1rem  
+  }
+}
+
 .card {
   list-style: none;
   display: flex;

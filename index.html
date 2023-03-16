@@ -59,7 +59,7 @@
 
     const { text } = response.generations[0]
     hideSpinner()
-    output.innerText = text
+    output.innerText = text.trim()
   }
   var loadingDiv = document.getElementById('loading');
 
@@ -71,5 +71,4 @@ function hideSpinner() {
   loadingDiv.style.visibility = 'hidden';
 }
 </script>
-
 </html>
