@@ -4,6 +4,16 @@ const myButton = document.querySelector(".my-button");
 const output = document.querySelector(".question");
 myButton.onclick = getQuestion;
 
+var loadingDiv = document.getElementById('loading');
+
+function showSpinner() {
+  loadingDiv.style.visibility = 'visible';
+}
+
+function hideSpinner() {
+  loadingDiv.style.visibility = 'hidden';
+}
+
 async function getQuestion() {
   showSpinner()
   const data = {
