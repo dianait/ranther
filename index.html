@@ -10,12 +10,16 @@
 </head>
 
 <body>
+
   <main>
     <h1>Welcome to <span class="text-gradient">Ranther</span></h1>
     <p class="instructions">
       🙋🏻‍♀️ The IA <strong>ran</strong>dom ra<strong>ther</strong> question generator you were looking for.
     </p>
     <section class="card">
+      <div id="loading" class="loading">
+        Loading&#8230;     
+      </div>
       <h2 class="question">Would you rather be a cat or a dog?</h2>
     </section>
     <button class="my-button">Get new question</button>
@@ -31,7 +35,7 @@
   myButton.onclick = getQuestion;
 
   async function getQuestion() {
-    console.log("Getting question...")
+    showSpinner()
     const data = {
       model: 'command-xlarge-nightly',
       prompt: `Generate a single "Would You Rather" question for a informal meeting in order to know us each other a little better without being too personal. Generate only the question, not the answer.`,
@@ -54,8 +58,18 @@
     }).then(res => res.json())
 
     const { text } = response.generations[0]
+    hideSpinner()
     output.innerText = text
   }
+  var loadingDiv = document.getElementById('loading');
+
+function showSpinner() {
+  loadingDiv.style.visibility = 'visible';
+}
+
+function hideSpinner() {
+  loadingDiv.style.visibility = 'hidden';
+}
 </script>
 
 </html>
