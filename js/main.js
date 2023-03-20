@@ -23,9 +23,9 @@ async function  getQuestion() {
   showSpinner()
     let [openIAResult, cohereResult] = await Promise.all([openIARequest(), cohereRequest()]);
     openIAOutput.innerText = openIAResult.text;
-    openIAHeader.innerText += ` (${openIAResult.seconds}s)`;
+    openIAHeader.innerText = `🔮 OpenIA (${openIAResult.seconds}s)`;
     cohereOutput.innerText = cohereResult.text.trim();
-    cohereHeader.innerText += ` (${cohereResult.seconds}s)`;
+    cohereHeader.innerText = `💈 Cohere (${cohereResult.seconds}s)`;
     shareTwitter.setAttribute("href", getUrlShareTwitter(cohereResult));
   hideSpinner()
 }
