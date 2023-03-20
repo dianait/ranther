@@ -1,8 +1,7 @@
-
 import { COHERE } from '../config/keys.js'
 
 export async function cohereRequest() {
-    showSpinner()
+    const start = performance.now();
     const data = {
       model: 'command-xlarge-nightly',
       prompt: COHERE.prompt,
@@ -25,7 +24,8 @@ export async function cohereRequest() {
     }).then(res => res.json())
   
     const { text } = response.generations[0]
-    hideSpinner()
-    shareTwitter.setAttribute("href", getUrlShareTwitter(text.trim()));
-    output.innerText = text.trim()
+    const timeTaken = performance.now() - start;
+    const seconds = ((timeTaken % 60000) / 1000).toFixed(3);
+    console.log(`Cohere has taken: ${seconds}`)
+    return {text, seconds}
   }
