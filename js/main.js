@@ -8,8 +8,8 @@ import {
   openIAOutput, 
   cohereOutput, 
   shareTwitter, 
-  openIAHeader, 
-  cohereHeader 
+  openIATime, 
+  cohereTime 
 
 } from "./selectors.js";
 
@@ -23,9 +23,9 @@ async function  getQuestion() {
   showSpinner()
     let [openIAResult, cohereResult] = await Promise.all([openIARequest(), cohereRequest()]);
     openIAOutput.innerText = openIAResult.text;
-    openIAHeader.innerText = `🔮 OpenIA (${openIAResult.seconds}s)`;
+    openIATime.innerText = ` (${openIAResult.seconds}s)`;
     cohereOutput.innerText = cohereResult.text.trim();
-    cohereHeader.innerText = `💈 Cohere (${cohereResult.seconds}s)`;
+    cohereTime.innerText = ` (${cohereResult.seconds}s)`;
     shareTwitter.setAttribute("href", getUrlShareTwitter(cohereResult));
   hideSpinner()
 }
