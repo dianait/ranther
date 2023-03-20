@@ -26,7 +26,7 @@ async function  getQuestion() {
     openIATime.innerText = ` (${openIAResult.seconds}s)`;
     cohereOutput.innerText = cohereResult.text.trim();
     cohereTime.innerText = ` (${cohereResult.seconds}s)`;
-    shareTwitter.setAttribute("href", getUrlShareTwitter(cohereResult));
+    shareTwitter.setAttribute("href", getUrlShareTwitter(cohereResult.text));
   hideSpinner()
 }
 
