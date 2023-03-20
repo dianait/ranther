@@ -6,10 +6,7 @@ html {
   font-family: system-ui, sans-serif;
   background-color: #F6F6F6;
 }
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+
 main {
   margin: auto;
   padding: 1.5rem;
@@ -37,14 +34,7 @@ h1 {
   padding: 1rem;
   border-radius: 0.4rem;
 }
-.instructions code {
-  font-size: 0.875em;
-  font-weight: bold;
-  background: rgba(var(--accent), 12%);
-  color: rgb(var(--accent));
-  border-radius: 4px;
-  padding: 0.3em 0.45em;
-}
+
 .instructions strong {
   color: rgb(var(--accent));
 }
@@ -55,6 +45,7 @@ h1 {
   padding: 0;
 }
 button {
+  cursor: hand;
   background-color: rgb(137, 103, 239);
   margin: .5rem 0;
   color: white;
@@ -64,6 +55,7 @@ button {
   border-radius: 0.5rem;
   font-size: large;
 }
+
 h2 {
   text-align: center;
   margin: 0 auto;
@@ -108,14 +100,15 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
   text-decoration: none;
   background-color: #1DA1F2;
   color: white;
   border-radius: 0.5rem;
-  padding: 10px 20px;
   font-size: 18px;
   color: white;
   transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  cursor: hand;
 }
