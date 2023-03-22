@@ -5,12 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/x-icon" href="./public/ice.ico">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ranther.vercel.app">
-    <meta property="twitter:title" content="ranther">
-    <meta property="twitter:description" content="The IA random rather question generator you were looking for.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/dianait/ranther/main/public/rantherss.png">
   <title>Ranther</title>
   <link rel="stylesheet" href="./styles/styles.css" />
   <link rel="stylesheet" href="./styles/loader.css" />
@@ -28,22 +22,22 @@
         Loading&#8230;
       </div>
       <section class="output">
-        <p class="openIAHeader"> 🔮 OpenIA <span class="openIATime"></span></p>
-        <h2 class="openIA-question">Would you rather be a cat or a dog?</h2>
-
-        <p class="CohereIAHeader"> 💈 Cohere <span class="cohereTime"></span></p>
-        <h2 class="cohere-question">Would you rather be a cat or a dog?</h2>
+        <h2 id="question" class="openIA-question"></h2>
       </section>
+    </section>
+    <section id="answers">
+      <div class="instructions"><input id="option1Button" type="radio" name="option" value="adfasdf" checked>
+        <label id="option1" for="huey"></label>
+      </div>
+      <div class="instructions"><input id="option2Button" type="radio" name="option" value="adfadf">
+        <label id="option2" for="option2"></label>
+      </div>
     </section>
     <button class="generate-button">Get new question</button>
 
-    <a href="" class="share-twitter"> <img src="./public/twitter.png" alt="compartir" width="25" /> Share</a>
 
-    <p class="instructions">
-      🕣 May <strong>take a little while</strong> (about 5'' or so) because I'm using <strong>co:here</strong> free
-      trial API key.
-      <a href="https://cohere.ai/">Get yours!</a>
-    </p>
+
+    <a href="" class="share-twitter"> <img src="./public/twitter.png" alt="compartir" width="25" /> Share</a>
   </main>
   <footer>
     <p>
@@ -53,4 +47,5 @@
     </p>
   </footer>
 </body>
+
 </html>

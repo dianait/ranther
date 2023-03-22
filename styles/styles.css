@@ -131,3 +131,14 @@ margin: 1rem 0 0 0;
 padding:0;
 text-align: center;
 }
+
+section#answers {
+  width:100%; 
+  display:flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+section#answers > div {
+  width: 100%;
+}
