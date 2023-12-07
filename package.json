@@ -1,14 +1,14 @@
 {
-  "name": "ranthervite",
+  "name": "ranther",
   "private": true,
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.5.1"
+    "vite": "4.5.1"
   }
 }

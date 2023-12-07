@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  vite: ^4.5.1
+  vite: 4.5.1
 
 devDependencies:
   vite: 4.5.1
