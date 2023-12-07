@@ -2,14 +2,18 @@ import { OPENIA } from '../config/keys.js'
 
 export async function openIARequest() {
     const data = {
-      model: 'text-davinci-003',
-      prompt: OPENIA.prompt,
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: "user",
+          content: OPENIA.prompt
+        }
+      ],
       temperature: 0.9,
       max_tokens: 182,
       top_p: 1,
       frequency_penalty: 0,
-      presence_penalty: 0.75,
-      stop: ['--']
+      presence_penalty: 0.75
     }
   
     const response = await fetch(OPENIA.endpoint, {
@@ -20,7 +24,7 @@ export async function openIARequest() {
       },
       body: JSON.stringify(data)
     }).then(res => res.json())
-  
-  const text = response.choices[0].text.trim()
+
+  const text = response.choices[0].message.content
   return text
   }
